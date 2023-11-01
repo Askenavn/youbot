@@ -8,7 +8,7 @@
 
 Для работы вам потребуется компьютер под управлением операционной системой Ubuntu 20.04 и установленная операционная система для роботов ROS Kinetic Kame. Данная инструкция подойдет и к более старым версиям.
 
-[Инструкция по установке Ubuntu 16.04](https://losst.ru/ustanovka-ubuntu-20-04)
+[Инструкция по установке Ubuntu 20.04](https://losst.ru/ustanovka-ubuntu-20-04)
 
 [Инструкция по установке ROS](http://wiki.ros.org/noetic/Installation/Ubuntu)
 
@@ -20,7 +20,7 @@
 
 [Введение в ROS](https://github.com/shamoleg/course)
 
-sudo setcap cap_net_raw+ep devel/lib/youbot_control/youbot_control
+
 
 ## Установка
 
@@ -51,7 +51,7 @@ sudo apt-get install git
 
 ```console
 cd ~/catkin_ws/src
-git clone https://github.com/shamoleg/youbot.git
+git clone https://github.com/Askenavn/youbot.git
 ```
 
 Клонируйте данный репозитории субмодулей:
@@ -74,9 +74,7 @@ catkin_make
 
 ```console
 cd ~/catkin_ws/devel/lib/youbot_driver_interface/
-sudo setcap cap_net_raw+ep youbot_driver_interface
-sudo setcap cap_net_raw+ep youbot_2nd_arm_test
-sudo setcap cap_net_raw+ep youbot_arm_test
+sudo setcap cap_net_raw+ep devel/lib/youbot_control/youbot_control
 ```
 
 Установите утилиту ifconfig:
@@ -125,14 +123,14 @@ nano youbot-ethercat.cfg
 
 Мобильная платформа включена и готова к работе.
 
-Обновите кэш разделяймых библиотек:
+Обновите кэш разделяймых библиотек (с правами администратора обязательно):
 ```console
-ldconfig /opt/ros/noetic/lib/
+sudo ldconfig /opt/ros/noetic/lib/
 ```
 
 Запустите yзел управления на персональном компьютере:
 ```console
-roslaunch youbot_driver_interface youbot_driver_interface.launch
+roslaunch youbot_control youbot_control.launch
 ```
 
 Запустите тест в новом окне терминала:

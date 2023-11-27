@@ -52,12 +52,17 @@ sudo apt-get install git
 ```console
 cd ~/catkin_ws/src
 git clone https://github.com/Askenavn/youbot.git
+git clone https://github.com/Askenavn/mecanum_drive_controller.git
 ```
 
-Клонируйте данный репозитории субмодулей:
+Клонируйте данные репозитории субмодулей:
 
 ```console
 cd ~/catkin_ws/src/youbot
+git submodule init
+git submodule update
+
+cd ~/catkin_ws/src/mecanum_drive_controller
 git submodule init
 git submodule update
 ```
@@ -134,7 +139,7 @@ sudo ldconfig /opt/ros/noetic/lib/
 
 Запустите yзел управления на персональном компьютере:
 ```console
-roslaunch youbot_control youbot_control.launch
+roslaunch mecanum_drive_controller mecanum_drive_controller.launch
 ```
 
 Запустите управление передвижением:

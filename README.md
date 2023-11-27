@@ -70,10 +70,10 @@ rosdep install --from-paths src --ignore-src -r -y
 catkin_make
 ```
 
-Перейдите в директорию с собранным youbot_driver_interface и разрешите исполняемым файлам взаимодействовать с EtherCAT:
+Разрешите исполняемым файлам взаимодействовать с EtherCAT:
 
 ```console
-cd ~/catkin_ws/devel/lib/youbot_driver_interface/
+cd ~/catkin_ws/
 sudo setcap cap_net_raw+ep devel/lib/youbot_control/youbot_control
 ```
 
@@ -109,6 +109,10 @@ nano youbot-ethercat.cfg
 
 ![eth](./.img/eth.png)
 
+Установите управление с помощью клавиатуры
+```console
+sudo apt-get install ros-noetic-teleop-twist-keyboard
+```
 
 Персональный компьютер готов к управлению мобильной платформой youbot
 
@@ -133,14 +137,9 @@ sudo ldconfig /opt/ros/noetic/lib/
 roslaunch youbot_control youbot_control.launch
 ```
 
-Запустите тест в новом окне терминала:
-```console
-rosrun youbot_driver_interface youbot_arm_test 
-```
-
 Запустите управление передвижением:
 ```console
-rosrun youbot_driver_interface youbot_keyboard_teleop.py
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 ```
 
 Для остановки работы узла в выбранном окне терминала нажмите сочетание клавиш  `Ctrl + C`

@@ -139,7 +139,7 @@ sudo ldconfig /opt/ros/noetic/lib/
 
 Запустите yзел управления на персональном компьютере:
 ```console
-roslaunch mecanum_drive_controller mecanum_drive_controller.launch
+roslaunch yubot_control youbot_driver_interface.launch
 ```
 
 Запустите управление передвижением:

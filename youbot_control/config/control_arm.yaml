@@ -3,7 +3,7 @@ hardware_control_loop:
 
 youbot_arm:
   config_name: "youbot-manipulator"
-  config_path: "/home/sham/catkin_ws/src/youbot/youbot_control/config/"
+  config_path: "/home/adminuser/catkin_ws/src/youbot/youbot_control/config/"
 
 youbot_arm/arm_hardware_interface:
   joints: &arm_joints

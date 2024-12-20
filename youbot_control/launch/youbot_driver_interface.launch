@@ -9,7 +9,8 @@
                                           youbot_base/mecanum_drive_controller
                                           "/>
 
-    <arg name="arm_controllers" default="youbot_arm/joints_vel_controller
+    <arg name="arm_controllers" default="youbot_arm/joints_pos_controller
+    						youbot_arm/gripper_pos_controller
                                          "/>
 
     <node name="controller_spawner_base" pkg="controller_manager" type="spawner"

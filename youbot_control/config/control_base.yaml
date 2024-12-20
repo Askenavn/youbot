@@ -3,7 +3,7 @@ hardware_control_loop:
 
 youbot_base:
   config_name: "youbot-base"
-  config_path: "/home/sham/catkin_ws/src/youbot/youbot_control/config/"
+  config_path: "/home/adminuser/catkin_ws/src/youbot/youbot_control/config/"
 
 youbot_base/base_hardware_interface:
   joints: &base_joints
